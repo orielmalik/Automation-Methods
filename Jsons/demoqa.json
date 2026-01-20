@@ -1,0 +1,438 @@
+{
+    "website": "https://demoqa.com",
+    "pages": {
+        "textBox": {
+            "url": "https://demoqa.com/text-box",
+            "fields": {
+                "fullName": {
+                    "id": "userName",
+                    "type": "text",
+                    "placeholder": "Full Name",
+                    "testValues": [
+                        "",
+                        "John Doe",
+                        "J",
+                        "John123",
+                        "John O'Brien-Smith",
+                        "!@#$%^&*()",
+                        "   John Doe   ",
+                        "ישראל ישראלי",
+                        "中文名字",
+                        "A".repeat(1000)
+                    ]
+                },
+                "email": {
+                    "id": "userEmail",
+                    "type": "email",
+                    "placeholder": "name@example.com",
+                    "testValues": [
+                        "",
+                        "test@example.com",
+                        "invalid-email",
+                        "@gmail.com",
+                        "test@",
+                        "test@domain",
+                        "test.email+tag@domain.co.uk",
+                        "a@b.c",
+                        "TEST@EXAMPLE.COM"
+                    ]
+                },
+                "currentAddress": {
+                    "id": "currentAddress",
+                    "type": "textarea",
+                    "placeholder": "Current Address",
+                    "testValues": [
+                        "",
+                        "123 Main St, City, Country",
+                        "A",
+                        "Line1\nLine2\nLine3",
+                        "!@#$%^&*()",
+                        "Very long address ".repeat(100)
+                    ]
+                },
+                "permanentAddress": {
+                    "id": "permanentAddress",
+                    "type": "textarea",
+                    "placeholder": "Permanent Address",
+                    "testValues": [
+                        "",
+                        "456 Oak Ave, Town, Country",
+                        "Same as current",
+                        "P.O. Box 123",
+                        "!@#$%"
+                    ]
+                }
+            }
+        },
+        "checkBox": {
+            "url": "https://demoqa.com/checkbox",
+            "fields": {
+                "treeNodes": {
+                    "type": "checkbox-tree",
+                    "nodes": [
+                        "Home",
+                        "Desktop",
+                        "Notes",
+                        "Commands",
+                        "Documents",
+                        "WorkSpace",
+                        "React",
+                        "Angular",
+                        "Veu",
+                        "Office",
+                        "Public",
+                        "Private",
+                        "Classified",
+                        "General",
+                        "Downloads",
+                        "Word File.doc",
+                        "Excel File.doc"
+                    ]
+                }
+            }
+        },
+        "radioButton": {
+            "url": "https://demoqa.com/radio-button",
+            "fields": {
+                "like": {
+                    "type": "radio",
+                    "options": [
+                        "Yes",
+                        "Impressive",
+                        "No"
+                    ],
+                    "testValues": [
+                        "Yes",
+                        "Impressive",
+                        "No"
+                    ]
+                }
+            }
+        },
+        "webTables": {
+            "url": "https://demoqa.com/webtables",
+            "fields": {
+                "firstName": {
+                    "id": "firstName",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "John",
+                        "J",
+                        "John123",
+                        "!@#$%"
+                    ]
+                },
+                "lastName": {
+                    "id": "lastName",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "Doe",
+                        "D",
+                        "Doe123",
+                        "O'Brien"
+                    ]
+                },
+                "email": {
+                    "id": "userEmail",
+                    "type": "email",
+                    "testValues": [
+                        "",
+                        "test@example.com",
+                        "invalid",
+                        "@test.com"
+                    ]
+                },
+                "age": {
+                    "id": "age",
+                    "type": "number",
+                    "testValues": [
+                        "",
+                        "25",
+                        "0",
+                        "-1",
+                        "150",
+                        "abc",
+                        "25.5"
+                    ]
+                },
+                "salary": {
+                    "id": "salary",
+                    "type": "number",
+                    "testValues": [
+                        "",
+                        "50000",
+                        "0",
+                        "-1000",
+                        "999999999",
+                        "abc"
+                    ]
+                },
+                "department": {
+                    "id": "department",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "IT",
+                        "Engineering",
+                        "HR",
+                        "!@#$%",
+                        "Department123"
+                    ]
+                },
+                "searchBox": {
+                    "id": "searchBox",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "John",
+                        "test@",
+                        "Insurance",
+                        "!@#"
+                    ]
+                }
+            }
+        },
+        "automationPracticeForm": {
+            "url": "https://demoqa.com/automation-practice-form",
+            "fields": {
+                "firstName": {
+                    "id": "firstName",
+                    "type": "text",
+                    "placeholder": "First Name",
+                    "testValues": [
+                        "",
+                        "John",
+                        "J",
+                        "John123",
+                        "!@#$%",
+                        "ישראל"
+                    ]
+                },
+                "lastName": {
+                    "id": "lastName",
+                    "type": "text",
+                    "placeholder": "Last Name",
+                    "testValues": [
+                        "",
+                        "Doe",
+                        "D",
+                        "O'Brien-Smith",
+                        "!@#$%"
+                    ]
+                },
+                "email": {
+                    "id": "userEmail",
+                    "type": "email",
+                    "placeholder": "name@example.com",
+                    "testValues": [
+                        "",
+                        "test@example.com",
+                        "invalid",
+                        "@test.com",
+                        "test@"
+                    ]
+                },
+                "gender": {
+                    "type": "radio",
+                    "name": "gender",
+                    "options": [
+                        "Male",
+                        "Female",
+                        "Other"
+                    ],
+                    "testValues": [
+                        "Male",
+                        "Female",
+                        "Other"
+                    ]
+                },
+                "mobile": {
+                    "id": "userNumber",
+                    "type": "text",
+                    "placeholder": "Mobile Number",
+                    "testValues": [
+                        "",
+                        "1234567890",
+                        "123",
+                        "12345678901234567890",
+                        "abc",
+                        "+1-234-567-8900",
+                        "!@#$%"
+                    ]
+                },
+                "dateOfBirth": {
+                    "id": "dateOfBirthInput",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "01 Jan 2000",
+                        "31 Dec 1990",
+                        "29 Feb 2020",
+                        "invalid-date"
+                    ]
+                },
+                "subjects": {
+                    "id": "subjectsInput",
+                    "type": "autocomplete",
+                    "testValues": [
+                        "",
+                        "Maths",
+                        "English",
+                        "Physics",
+                        "Chemistry",
+                        "Computer Science",
+                        "Arts",
+                        "invalid-subject"
+                    ]
+                },
+                "hobbies": {
+                    "type": "checkbox",
+                    "options": [
+                        "Sports",
+                        "Reading",
+                        "Music"
+                    ],
+                    "testValues": [
+                        [
+                            "Sports"
+                        ],
+                        [
+                            "Reading"
+                        ],
+                        [
+                            "Music"
+                        ],
+                        [
+                            "Sports",
+                            "Reading"
+                        ],
+                        [
+                            "Sports",
+                            "Reading",
+                            "Music"
+                        ],
+                        []
+                    ]
+                },
+                "picture": {
+                    "id": "uploadPicture",
+                    "type": "file",
+                    "testValues": [
+                        "",
+                        "photo.jpg",
+                        "photo.png",
+                        "document.pdf",
+                        "largefile.zip",
+                        "file with spaces.jpg"
+                    ]
+                },
+                "currentAddress": {
+                    "id": "currentAddress",
+                    "type": "textarea",
+                    "placeholder": "Current Address",
+                    "testValues": [
+                        "",
+                        "123 Main St",
+                        "Line1\nLine2",
+                        "!@#$%"
+                    ]
+                },
+                "state": {
+                    "id": "state",
+                    "type": "select",
+                    "options": [
+                        "NCR",
+                        "Uttar Pradesh",
+                        "Haryana",
+                        "Rajasthan"
+                    ],
+                    "testValues": [
+                        "NCR",
+                        "Uttar Pradesh",
+                        "Haryana",
+                        "Rajasthan"
+                    ]
+                },
+                "city": {
+                    "id": "city",
+                    "type": "select",
+                    "dependsOn": "state",
+                    "optionsByState": {
+                        "NCR": [
+                            "Delhi",
+                            "Gurgaon",
+                            "Noida"
+                        ],
+                        "Uttar Pradesh": [
+                            "Agra",
+                            "Lucknow",
+                            "Merrut"
+                        ],
+                        "Haryana": [
+                            "Karnal",
+                            "Panipat"
+                        ],
+                        "Rajasthan": [
+                            "Jaipur",
+                            "Jaiselmer"
+                        ]
+                    }
+                }
+            }
+        },
+        "buttons": {
+            "url": "https://demoqa.com/buttons",
+            "fields": {
+                "doubleClickButton": {
+                    "id": "doubleClickBtn",
+                    "type": "button",
+                    "action": "double-click"
+                },
+                "rightClickButton": {
+                    "id": "rightClickBtn",
+                    "type": "button",
+                    "action": "right-click"
+                },
+                "dynamicClickButton": {
+                    "type": "button",
+                    "action": "click"
+                }
+            }
+        },
+        "links": {
+            "url": "https://demoqa.com/links",
+            "fields": {
+                "simpleLink": {
+                    "id": "simpleLink",
+                    "type": "link"
+                },
+                "dynamicLink": {
+                    "id": "dynamicLink",
+                    "type": "link"
+                }
+            }
+        },
+        "uploadDownload": {
+            "url": "https://demoqa.com/upload-download",
+            "fields": {
+                "uploadFile": {
+                    "id": "uploadFile",
+                    "type": "file",
+                    "testValues": [
+                        "",
+                        "test.txt",
+                        "image.jpg",
+                        "document.pdf",
+                        "script.exe"
+                    ]
+                },
+                "downloadButton": {
+                    "id": "downloadButton",
+                    "type": "button"
+                }
+            }
+        }
+    }
+}

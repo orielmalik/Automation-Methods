@@ -1,0 +1,161 @@
+{
+    "website": "https://www.saucedemo.com",
+    "pages": {
+        "login": {
+            "url": "https://www.saucedemo.com",
+            "fields": {
+                "username": {
+                    "id": "user-name",
+                    "name": "user-name",
+                    "dataTest": "username",
+                    "type": "text",
+                    "placeholder": "Username",
+                    "validUsers": [
+                        "standard_user",
+                        "locked_out_user",
+                        "problem_user",
+                        "performance_glitch_user",
+                        "error_user",
+                        "visual_user"
+                    ],
+                    "testValues": [
+                        "",
+                        "standard_user",
+                        "locked_out_user",
+                        "problem_user",
+                        "performance_glitch_user",
+                        "error_user",
+                        "visual_user",
+                        "invalid_user",
+                        "admin",
+                        "test@#$%",
+                        "SELECT * FROM users",
+                        " ",
+                        "STANDARD_USER"
+                    ]
+                },
+                "password": {
+                    "id": "password",
+                    "name": "password",
+                    "dataTest": "password",
+                    "type": "password",
+                    "placeholder": "Password",
+                    "validPassword": "secret_sauce",
+                    "testValues": [
+                        "",
+                        "secret_sauce",
+                        "wrongpassword",
+                        "SECRET_SAUCE",
+                        "123456",
+                        "!@#$%^&*()",
+                        " secret_sauce",
+                        "secret_sauce ",
+                        "secret sauce"
+                    ]
+                }
+            },
+            "buttons": {
+                "login": {
+                    "id": "login-button",
+                    "name": "login-button",
+                    "dataTest": "login-button",
+                    "type": "submit"
+                }
+            },
+            "expectedErrors": {
+                "emptyUsername": "Epic sadface: Username is required",
+                "emptyPassword": "Epic sadface: Password is required",
+                "invalidCredentials": "Epic sadface: Username and password do not match any user in this service",
+                "lockedOut": "Epic sadface: Sorry, this user has been locked out."
+            }
+        },
+        "inventory": {
+            "url": "https://www.saucedemo.com/inventory.html",
+            "fields": {
+                "sortDropdown": {
+                    "dataTest": "product-sort-container",
+                    "type": "select",
+                    "testValues": [
+                        "az",
+                        "za",
+                        "lohi",
+                        "hilo"
+                    ],
+                    "options": [
+                        "Name (A to Z)",
+                        "Name (Z to A)",
+                        "Price (low to high)",
+                        "Price (high to low)"
+                    ]
+                }
+            }
+        },
+        "cart": {
+            "url": "https://www.saucedemo.com/cart.html",
+            "fields": {
+                "continueShoppingButton": {
+                    "dataTest": "continue-shopping",
+                    "type": "button"
+                },
+                "checkoutButton": {
+                    "dataTest": "checkout",
+                    "type": "button"
+                }
+            }
+        },
+        "checkout_step_one": {
+            "url": "https://www.saucedemo.com/checkout-step-one.html",
+            "fields": {
+                "firstName": {
+                    "id": "first-name",
+                    "dataTest": "firstName",
+                    "type": "text",
+                    "placeholder": "First Name",
+                    "testValues": [
+                        "",
+                        "John",
+                        "J",
+                        "John123",
+                        "John@#$",
+                        "JohnWithVeryLongFirstNameThatMightExceedLimits",
+                        " ",
+                        "   John   "
+                    ]
+                },
+                "lastName": {
+                    "id": "last-name",
+                    "dataTest": "lastName",
+                    "type": "text",
+                    "placeholder": "Last Name",
+                    "testValues": [
+                        "",
+                        "Doe",
+                        "D",
+                        "Doe123",
+                        "O'Brien",
+                        "Smith-Jones",
+                        "Müller",
+                        " ",
+                        "   Doe   "
+                    ]
+                },
+                "postalCode": {
+                    "id": "postal-code",
+                    "dataTest": "postalCode",
+                    "type": "text",
+                    "placeholder": "Zip/Postal Code",
+                    "testValues": [
+                        "",
+                        "12345",
+                        "12345-6789",
+                        "ABCDE",
+                        "!@#$%",
+                        "1234567890123",
+                        " ",
+                        "00000"
+                    ]
+                }
+            }
+        }
+    }
+}

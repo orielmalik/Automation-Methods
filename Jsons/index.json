@@ -1,0 +1,52 @@
+{
+    "project": "QA Testing Websites - Test Data Collection",
+    "description": "A collection of JSON files containing test data for popular QA testing practice websites. Each JSON file contains website URLs, form fields with their identifiers, and arrays of test values including valid, invalid, and edge case inputs.",
+    "createdAt": "2026-01-21",
+    "websites": [
+        {
+            "name": "The Internet Herokuapp",
+            "file": "the-internet-herokuapp.json",
+            "url": "https://the-internet.herokuapp.com",
+            "description": "The most popular practice site with pages for common testing scenarios: login forms, checkboxes, dropdowns, file uploads, dynamic content, alerts, authentication, and more."
+        },
+        {
+            "name": "SauceDemo",
+            "file": "saucedemo.json",
+            "url": "https://www.saucedemo.com",
+            "description": "Simple e-commerce site from Sauce Labs featuring login, product catalog, cart, and checkout flows. Perfect for end-to-end testing."
+        },
+        {
+            "name": "DemoBlaze",
+            "file": "demoblaze.json",
+            "url": "https://www.demoblaze.com",
+            "description": "Electronics store demo with products, categories, cart, orders, signup, login, and contact forms. Great for UX flow testing."
+        },
+        {
+            "name": "DemoQA",
+            "file": "demoqa.json",
+            "url": "https://demoqa.com",
+            "description": "Extensive collection of interactive elements: forms, tables, widgets, interactions, checkboxes, radio buttons, date pickers, file uploads, and automation practice forms."
+        },
+        {
+            "name": "Automation Exercise",
+            "file": "automationexercise.json",
+            "url": "https://automationexercise.com",
+            "description": "Full-featured online store demo with registration, login, products, cart, payment simulation, and contact forms. Widely used for manual and automated testing practice."
+        },
+        {
+            "name": "Automation Playground",
+            "file": "automation-playground.json",
+            "url": "https://play1.automationcamp.ir",
+            "description": "Comprehensive playground with specific exercises for checkboxes, radio buttons, tables, alerts, iframes, forms, keyboard/mouse events, and advanced scenarios."
+        }
+    ],
+    "testValueTypes": {
+        "empty": "Empty string for testing required field validation",
+        "valid": "Correct/expected input values",
+        "invalid": "Incorrect format or type values",
+        "boundary": "Edge case values (min/max lengths, special characters)",
+        "security": "SQL injection, XSS, and other security test inputs",
+        "unicode": "Non-English characters (Hebrew, Chinese, Arabic, etc.)",
+        "whitespace": "Spaces only or leading/trailing whitespace"
+    }
+}

@@ -1,0 +1,496 @@
+{
+    "website": "https://automationexercise.com",
+    "pages": {
+        "login": {
+            "url": "https://automationexercise.com/login",
+            "fields": {
+                "loginEmail": {
+                    "name": "email",
+                    "dataQa": "login-email",
+                    "type": "email",
+                    "placeholder": "Email Address",
+                    "testValues": [
+                        "",
+                        "test@example.com",
+                        "invalid-email",
+                        "@gmail.com",
+                        "test@",
+                        "existing@user.com",
+                        "UPPERCASE@EMAIL.COM"
+                    ]
+                },
+                "loginPassword": {
+                    "name": "password",
+                    "dataQa": "login-password",
+                    "type": "password",
+                    "placeholder": "Password",
+                    "testValues": [
+                        "",
+                        "correctpassword",
+                        "wrongpassword",
+                        "123456",
+                        "!@#$%^&*()",
+                        "short",
+                        " "
+                    ]
+                }
+            },
+            "buttons": {
+                "loginButton": {
+                    "dataQa": "login-button",
+                    "type": "submit"
+                }
+            }
+        },
+        "signup": {
+            "url": "https://automationexercise.com/login",
+            "fields": {
+                "signupName": {
+                    "name": "name",
+                    "dataQa": "signup-name",
+                    "type": "text",
+                    "placeholder": "Name",
+                    "testValues": [
+                        "",
+                        "John Doe",
+                        "J",
+                        "John123",
+                        "!@#$%",
+                        "ישראל",
+                        "中文"
+                    ]
+                },
+                "signupEmail": {
+                    "name": "email",
+                    "dataQa": "signup-email",
+                    "type": "email",
+                    "placeholder": "Email Address",
+                    "testValues": [
+                        "",
+                        "newuser@example.com",
+                        "invalid-email",
+                        "@gmail.com",
+                        "existing@user.com"
+                    ]
+                }
+            },
+            "buttons": {
+                "signupButton": {
+                    "dataQa": "signup-button",
+                    "type": "submit"
+                }
+            }
+        },
+        "signupDetails": {
+            "url": "https://automationexercise.com/signup",
+            "fields": {
+                "title": {
+                    "type": "radio",
+                    "options": [
+                        "Mr",
+                        "Mrs"
+                    ],
+                    "ids": [
+                        "id_gender1",
+                        "id_gender2"
+                    ],
+                    "testValues": [
+                        "Mr",
+                        "Mrs"
+                    ]
+                },
+                "name": {
+                    "id": "name",
+                    "dataQa": "name",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "John Doe",
+                        "J",
+                        "!@#$%"
+                    ]
+                },
+                "email": {
+                    "id": "email",
+                    "dataQa": "email",
+                    "type": "email",
+                    "testValues": [
+                        "test@example.com"
+                    ]
+                },
+                "password": {
+                    "id": "password",
+                    "dataQa": "password",
+                    "type": "password",
+                    "testValues": [
+                        "",
+                        "Password123",
+                        "pass",
+                        "!@#$%^&*()",
+                        " "
+                    ]
+                },
+                "days": {
+                    "id": "days",
+                    "dataQa": "days",
+                    "type": "select",
+                    "testValues": [
+                        "",
+                        "1",
+                        "15",
+                        "31"
+                    ]
+                },
+                "months": {
+                    "id": "months",
+                    "dataQa": "months",
+                    "type": "select",
+                    "testValues": [
+                        "",
+                        "January",
+                        "June",
+                        "December"
+                    ]
+                },
+                "years": {
+                    "id": "years",
+                    "dataQa": "years",
+                    "type": "select",
+                    "testValues": [
+                        "",
+                        "1990",
+                        "2000",
+                        "2020"
+                    ]
+                },
+                "newsletter": {
+                    "id": "newsletter",
+                    "type": "checkbox",
+                    "testValues": [
+                        true,
+                        false
+                    ]
+                },
+                "optin": {
+                    "id": "optin",
+                    "type": "checkbox",
+                    "testValues": [
+                        true,
+                        false
+                    ]
+                },
+                "firstName": {
+                    "id": "first_name",
+                    "dataQa": "first_name",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "John",
+                        "J",
+                        "John123",
+                        "!@#$%"
+                    ]
+                },
+                "lastName": {
+                    "id": "last_name",
+                    "dataQa": "last_name",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "Doe",
+                        "D",
+                        "O'Brien",
+                        "!@#$%"
+                    ]
+                },
+                "company": {
+                    "id": "company",
+                    "dataQa": "company",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "Acme Inc",
+                        "Company123",
+                        "!@#$%"
+                    ]
+                },
+                "address1": {
+                    "id": "address1",
+                    "dataQa": "address",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "123 Main St",
+                        "Apt 4B, 456 Oak Ave",
+                        "!@#$%"
+                    ]
+                },
+                "address2": {
+                    "id": "address2",
+                    "dataQa": "address2",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "Suite 100",
+                        "Building A",
+                        ""
+                    ]
+                },
+                "country": {
+                    "id": "country",
+                    "dataQa": "country",
+                    "type": "select",
+                    "options": [
+                        "India",
+                        "United States",
+                        "Canada",
+                        "Australia",
+                        "Israel",
+                        "New Zealand",
+                        "Singapore"
+                    ],
+                    "testValues": [
+                        "India",
+                        "United States",
+                        "Canada",
+                        "Australia"
+                    ]
+                },
+                "state": {
+                    "id": "state",
+                    "dataQa": "state",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "California",
+                        "NY",
+                        "State123",
+                        "!@#$%"
+                    ]
+                },
+                "city": {
+                    "id": "city",
+                    "dataQa": "city",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "New York",
+                        "NYC",
+                        "City123",
+                        "!@#$%"
+                    ]
+                },
+                "zipcode": {
+                    "id": "zipcode",
+                    "dataQa": "zipcode",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "12345",
+                        "12345-6789",
+                        "ABCDE",
+                        "!@#$%"
+                    ]
+                },
+                "mobileNumber": {
+                    "id": "mobile_number",
+                    "dataQa": "mobile_number",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "1234567890",
+                        "+1-234-567-8900",
+                        "abc",
+                        "!@#$%"
+                    ]
+                }
+            }
+        },
+        "contactUs": {
+            "url": "https://automationexercise.com/contact_us",
+            "fields": {
+                "name": {
+                    "name": "name",
+                    "dataQa": "name",
+                    "type": "text",
+                    "placeholder": "Name",
+                    "testValues": [
+                        "",
+                        "John Doe",
+                        "J",
+                        "!@#$%",
+                        "ישראל"
+                    ]
+                },
+                "email": {
+                    "name": "email",
+                    "dataQa": "email",
+                    "type": "email",
+                    "placeholder": "Email",
+                    "testValues": [
+                        "",
+                        "test@example.com",
+                        "invalid",
+                        "@test.com"
+                    ]
+                },
+                "subject": {
+                    "name": "subject",
+                    "dataQa": "subject",
+                    "type": "text",
+                    "placeholder": "Subject",
+                    "testValues": [
+                        "",
+                        "Test Subject",
+                        "!@#$%",
+                        "A".repeat(500)
+                    ]
+                },
+                "message": {
+                    "name": "message",
+                    "dataQa": "message",
+                    "type": "textarea",
+                    "placeholder": "Your Message Here",
+                    "testValues": [
+                        "",
+                        "This is a test message",
+                        "!@#$%^&*()",
+                        "Line1\nLine2\nLine3",
+                        "<script>alert('xss')</script>"
+                    ]
+                },
+                "uploadFile": {
+                    "name": "upload_file",
+                    "type": "file",
+                    "testValues": [
+                        "",
+                        "test.txt",
+                        "image.jpg",
+                        "document.pdf"
+                    ]
+                }
+            }
+        },
+        "products": {
+            "url": "https://automationexercise.com/products",
+            "fields": {
+                "searchProduct": {
+                    "id": "search_product",
+                    "type": "text",
+                    "placeholder": "Search Product",
+                    "testValues": [
+                        "",
+                        "shirt",
+                        "Dress",
+                        "!@#$%",
+                        "nonexistentproduct",
+                        "Blue Top"
+                    ]
+                }
+            }
+        },
+        "cart": {
+            "url": "https://automationexercise.com/view_cart",
+            "fields": {
+                "quantityInput": {
+                    "type": "number",
+                    "testValues": [
+                        "1",
+                        "0",
+                        "-1",
+                        "100",
+                        "abc"
+                    ]
+                }
+            }
+        },
+        "checkout": {
+            "url": "https://automationexercise.com/checkout",
+            "fields": {
+                "message": {
+                    "name": "message",
+                    "type": "textarea",
+                    "placeholder": "If you would like to add a comment about your order, please write it in the field below.",
+                    "testValues": [
+                        "",
+                        "Please deliver ASAP",
+                        "!@#$%",
+                        "Special instructions"
+                    ]
+                }
+            }
+        },
+        "payment": {
+            "url": "https://automationexercise.com/payment",
+            "fields": {
+                "nameOnCard": {
+                    "name": "name_on_card",
+                    "dataQa": "name-on-card",
+                    "type": "text",
+                    "placeholder": "Name on Card",
+                    "testValues": [
+                        "",
+                        "John Doe",
+                        "J",
+                        "!@#$%"
+                    ]
+                },
+                "cardNumber": {
+                    "name": "card_number",
+                    "dataQa": "card-number",
+                    "type": "text",
+                    "placeholder": "Card Number",
+                    "testValues": [
+                        "",
+                        "4111111111111111",
+                        "1234",
+                        "abcd",
+                        "4111-1111-1111-1111"
+                    ]
+                },
+                "cvc": {
+                    "name": "cvc",
+                    "dataQa": "cvc",
+                    "type": "text",
+                    "placeholder": "CVC",
+                    "testValues": [
+                        "",
+                        "123",
+                        "12",
+                        "1234",
+                        "abc"
+                    ]
+                },
+                "expiryMonth": {
+                    "name": "expiry_month",
+                    "dataQa": "expiry-month",
+                    "type": "text",
+                    "placeholder": "MM",
+                    "testValues": [
+                        "",
+                        "01",
+                        "12",
+                        "1",
+                        "13",
+                        "00",
+                        "AB"
+                    ]
+                },
+                "expiryYear": {
+                    "name": "expiry_year",
+                    "dataQa": "expiry-year",
+                    "type": "text",
+                    "placeholder": "YYYY",
+                    "testValues": [
+                        "",
+                        "2025",
+                        "25",
+                        "2020",
+                        "9999",
+                        "ABCD"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,552 @@
+{
+    "website": "https://play1.automationcamp.ir",
+    "pages": {
+        "login": {
+            "url": "https://play1.automationcamp.ir/login.html",
+            "fields": {
+                "username": {
+                    "id": "user",
+                    "type": "text",
+                    "placeholder": "Username",
+                    "testValues": [
+                        "",
+                        "admin",
+                        "user123",
+                        "!@#$%",
+                        "admin@test.com",
+                        " ",
+                        "ADMIN"
+                    ]
+                },
+                "password": {
+                    "id": "password",
+                    "type": "password",
+                    "placeholder": "Password",
+                    "testValues": [
+                        "",
+                        "admin123",
+                        "wrongpass",
+                        "!@#$%^&*()",
+                        "short",
+                        " "
+                    ]
+                }
+            },
+            "buttons": {
+                "login": {
+                    "id": "login",
+                    "type": "submit"
+                }
+            }
+        },
+        "register": {
+            "url": "https://play1.automationcamp.ir/register.html",
+            "fields": {
+                "firstName": {
+                    "id": "first_name",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "John",
+                        "J",
+                        "John123",
+                        "!@#$%",
+                        "ישראל"
+                    ]
+                },
+                "lastName": {
+                    "id": "last_name",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "Doe",
+                        "D",
+                        "O'Brien-Smith",
+                        "!@#$%"
+                    ]
+                },
+                "email": {
+                    "id": "email",
+                    "type": "email",
+                    "testValues": [
+                        "",
+                        "test@example.com",
+                        "invalid",
+                        "@test.com",
+                        "test@"
+                    ]
+                },
+                "password": {
+                    "id": "password",
+                    "type": "password",
+                    "testValues": [
+                        "",
+                        "Password123!",
+                        "pass",
+                        "12345678",
+                        "!@#$%^&*()"
+                    ]
+                },
+                "confirmPassword": {
+                    "id": "confirm_password",
+                    "type": "password",
+                    "testValues": [
+                        "",
+                        "Password123!",
+                        "differentpassword",
+                        "pass"
+                    ]
+                },
+                "phone": {
+                    "id": "phone",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "1234567890",
+                        "+1-234-567-8900",
+                        "abc",
+                        "!@#$%"
+                    ]
+                },
+                "termsCheckbox": {
+                    "id": "terms",
+                    "type": "checkbox",
+                    "testValues": [
+                        true,
+                        false
+                    ]
+                }
+            }
+        },
+        "forms": {
+            "url": "https://play1.automationcamp.ir/forms.html",
+            "sections": {
+                "basicFormControls": {
+                    "fields": {
+                        "textInput": {
+                            "id": "notes",
+                            "type": "text",
+                            "testValues": [
+                                "",
+                                "Sample text",
+                                "!@#$%^&*()",
+                                "Line1\nLine2",
+                                "<script>alert('xss')</script>"
+                            ]
+                        },
+                        "emailInput": {
+                            "id": "email",
+                            "type": "email",
+                            "testValues": [
+                                "",
+                                "test@example.com",
+                                "invalid-email",
+                                "@gmail.com"
+                            ]
+                        },
+                        "passwordInput": {
+                            "id": "password",
+                            "type": "password",
+                            "testValues": [
+                                "",
+                                "Password123",
+                                "short",
+                                "!@#$%"
+                            ]
+                        },
+                        "textarea": {
+                            "id": "comments",
+                            "type": "textarea",
+                            "testValues": [
+                                "",
+                                "This is a comment",
+                                "Line1\nLine2\nLine3",
+                                "!@#$%^"
+                            ]
+                        },
+                        "dropdown": {
+                            "id": "cars",
+                            "type": "select",
+                            "options": [
+                                "Volvo",
+                                "Saab",
+                                "Mercedes",
+                                "Audi"
+                            ],
+                            "testValues": [
+                                "",
+                                "volvo",
+                                "saab",
+                                "mercedes",
+                                "audi"
+                            ]
+                        },
+                        "multiSelect": {
+                            "id": "languages",
+                            "type": "select-multiple",
+                            "options": [
+                                "Java",
+                                "Python",
+                                "JavaScript",
+                                "C#",
+                                "Ruby"
+                            ],
+                            "testValues": [
+                                [],
+                                [
+                                    "Java"
+                                ],
+                                [
+                                    "Python",
+                                    "JavaScript"
+                                ],
+                                [
+                                    "Java",
+                                    "Python",
+                                    "JavaScript",
+                                    "C#",
+                                    "Ruby"
+                                ]
+                            ]
+                        },
+                        "radioButtons": {
+                            "name": "gender",
+                            "type": "radio",
+                            "options": [
+                                "Male",
+                                "Female",
+                                "Other"
+                            ],
+                            "testValues": [
+                                "male",
+                                "female",
+                                "other"
+                            ]
+                        },
+                        "checkboxes": {
+                            "type": "checkbox",
+                            "options": [
+                                "Reading",
+                                "Sports",
+                                "Music",
+                                "Movies"
+                            ],
+                            "testValues": [
+                                [],
+                                [
+                                    "Reading"
+                                ],
+                                [
+                                    "Sports",
+                                    "Music"
+                                ],
+                                [
+                                    "Reading",
+                                    "Sports",
+                                    "Music",
+                                    "Movies"
+                                ]
+                            ]
+                        },
+                        "rangeSlider": {
+                            "id": "volume",
+                            "type": "range",
+                            "min": "0",
+                            "max": "100",
+                            "testValues": [
+                                "0",
+                                "50",
+                                "100",
+                                "25",
+                                "75"
+                            ]
+                        },
+                        "colorPicker": {
+                            "id": "color",
+                            "type": "color",
+                            "testValues": [
+                                "#000000",
+                                "#FFFFFF",
+                                "#FF0000",
+                                "#00FF00",
+                                "#0000FF"
+                            ]
+                        },
+                        "datePicker": {
+                            "id": "date",
+                            "type": "date",
+                            "testValues": [
+                                "",
+                                "2025-01-01",
+                                "1990-12-31",
+                                "2030-06-15"
+                            ]
+                        },
+                        "timePicker": {
+                            "id": "time",
+                            "type": "time",
+                            "testValues": [
+                                "",
+                                "12:00",
+                                "00:00",
+                                "23:59",
+                                "09:30"
+                            ]
+                        },
+                        "numberInput": {
+                            "id": "quantity",
+                            "type": "number",
+                            "testValues": [
+                                "",
+                                "0",
+                                "1",
+                                "-1",
+                                "100",
+                                "999",
+                                "abc"
+                            ]
+                        },
+                        "fileUpload": {
+                            "id": "file",
+                            "type": "file",
+                            "testValues": [
+                                "",
+                                "test.txt",
+                                "image.jpg",
+                                "document.pdf"
+                            ]
+                        }
+                    }
+                },
+                "formWithValidations": {
+                    "fields": {
+                        "requiredField": {
+                            "id": "required_field",
+                            "type": "text",
+                            "required": true,
+                            "testValues": [
+                                "",
+                                "valid input",
+                                " ",
+                                "   "
+                            ]
+                        },
+                        "minLengthField": {
+                            "id": "min_length",
+                            "type": "text",
+                            "minLength": 5,
+                            "testValues": [
+                                "",
+                                "ab",
+                                "abcde",
+                                "abcdefghij"
+                            ]
+                        },
+                        "maxLengthField": {
+                            "id": "max_length",
+                            "type": "text",
+                            "maxLength": 10,
+                            "testValues": [
+                                "",
+                                "short",
+                                "exactly10c",
+                                "toolongstring"
+                            ]
+                        },
+                        "patternField": {
+                            "id": "pattern_field",
+                            "type": "text",
+                            "pattern": "[A-Za-z]+",
+                            "testValues": [
+                                "",
+                                "abc",
+                                "ABC",
+                                "abc123",
+                                "123",
+                                "!@#"
+                            ]
+                        },
+                        "emailValidation": {
+                            "id": "email_validation",
+                            "type": "email",
+                            "testValues": [
+                                "",
+                                "valid@email.com",
+                                "invalid",
+                                "@test.com"
+                            ]
+                        },
+                        "numberRange": {
+                            "id": "number_range",
+                            "type": "number",
+                            "min": 1,
+                            "max": 100,
+                            "testValues": [
+                                "",
+                                "0",
+                                "1",
+                                "50",
+                                "100",
+                                "101",
+                                "-1"
+                            ]
+                        }
+                    }
+                },
+                "nonEnglishLabels": {
+                    "fields": {
+                        "hebrewField": {
+                            "label": "שם",
+                            "type": "text",
+                            "testValues": [
+                                "",
+                                "ישראל",
+                                "Israel",
+                                "!@#"
+                            ]
+                        },
+                        "arabicField": {
+                            "label": "اسم",
+                            "type": "text",
+                            "testValues": [
+                                "",
+                                "أحمد",
+                                "Ahmed",
+                                "!@#"
+                            ]
+                        },
+                        "chineseField": {
+                            "label": "姓名",
+                            "type": "text",
+                            "testValues": [
+                                "",
+                                "中文",
+                                "Chinese",
+                                "!@#"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "expectedConditions": {
+            "url": "https://play1.automationcamp.ir/expected_conditions.html",
+            "fields": {
+                "alertTrigger": {
+                    "id": "alert_trigger",
+                    "type": "button"
+                },
+                "confirmTrigger": {
+                    "id": "confirm_trigger",
+                    "type": "button"
+                },
+                "promptTrigger": {
+                    "id": "prompt_trigger",
+                    "type": "button"
+                }
+            }
+        },
+        "keyboardEvents": {
+            "url": "https://play1.automationcamp.ir/keyboard_events.html",
+            "fields": {
+                "keyInput": {
+                    "id": "key_input",
+                    "type": "text",
+                    "testValues": [
+                        "a",
+                        "A",
+                        "1",
+                        "!",
+                        "Enter",
+                        "Tab",
+                        "Escape",
+                        "Shift+A",
+                        "Ctrl+C"
+                    ]
+                }
+            }
+        },
+        "mouseEvents": {
+            "url": "https://play1.automationcamp.ir/mouse_events.html",
+            "fields": {
+                "clickArea": {
+                    "id": "click_area",
+                    "actions": [
+                        "click",
+                        "double-click",
+                        "right-click",
+                        "hover"
+                    ]
+                },
+                "dragSource": {
+                    "id": "drag_source",
+                    "type": "draggable"
+                },
+                "dropTarget": {
+                    "id": "drop_target",
+                    "type": "droppable"
+                }
+            }
+        },
+        "frames": {
+            "url": "https://play1.automationcamp.ir/frames.html",
+            "fields": {
+                "frameInput": {
+                    "frameId": "frame1",
+                    "inputId": "name",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "Test input in frame",
+                        "!@#$%"
+                    ]
+                },
+                "nestedFrameInput": {
+                    "outerFrameId": "outer_frame",
+                    "innerFrameId": "inner_frame",
+                    "inputId": "nested_input",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "Nested frame input",
+                        "!@#$%"
+                    ]
+                }
+            }
+        },
+        "multiWindow": {
+            "url": "https://play1.automationcamp.ir/multi_window.html",
+            "fields": {
+                "openNewWindow": {
+                    "id": "new_window",
+                    "type": "button"
+                },
+                "openNewTab": {
+                    "id": "new_tab",
+                    "type": "button"
+                }
+            }
+        },
+        "advanced": {
+            "url": "https://play1.automationcamp.ir/advanced.html",
+            "fields": {
+                "shadowDomInput": {
+                    "type": "shadow-dom",
+                    "testValues": [
+                        "",
+                        "Shadow DOM input",
+                        "!@#$%"
+                    ]
+                },
+                "canvasElement": {
+                    "id": "canvas",
+                    "type": "canvas"
+                },
+                "svgElement": {
+                    "id": "svg",
+                    "type": "svg"
+                }
+            }
+        }
+    }
+}

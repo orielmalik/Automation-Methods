@@ -1,0 +1,109 @@
+{
+  "website": "https://the-internet.herokuapp.com",
+  "pages": {
+    "login": {
+      "url": "https://the-internet.herokuapp.com/login",
+      "fields": {
+        "username": {
+          "id": "username",
+          "name": "username",
+          "type": "text",
+          "testValues": ["", "tomsmith", "admin", "user123", "test@#$%", "verylongusernamethatexceedsnormallimits", " ", "Tom Smith", "TOMSMITH"]
+        },
+        "password": {
+          "id": "password",
+          "name": "password",
+          "type": "password",
+          "testValues": ["", "SuperSecretPassword!", "wrongpass", "123456", "!@#$%^&*()", "short", "verylongpasswordthatmightexceedlimits", " ", "supersecretpassword!"]
+        }
+      }
+    },
+    "forgot_password": {
+      "url": "https://the-internet.herokuapp.com/forgot_password",
+      "fields": {
+        "email": {
+          "id": "email",
+          "name": "email",
+          "type": "text",
+          "testValues": ["", "test@example.com", "invalid-email", "@gmail.com", "test@", "test@domain", "test@.com", "a@b.c", "test+alias@gmail.com", "!@#$%"]
+        }
+      }
+    },
+    "checkboxes": {
+      "url": "https://the-internet.herokuapp.com/checkboxes",
+      "fields": {
+        "checkbox1": {
+          "type": "checkbox",
+          "testValues": [true, false]
+        },
+        "checkbox2": {
+          "type": "checkbox",
+          "testValues": [true, false]
+        }
+      }
+    },
+    "dropdown": {
+      "url": "https://the-internet.herokuapp.com/dropdown",
+      "fields": {
+        "dropdown": {
+          "id": "dropdown",
+          "type": "select",
+          "testValues": ["", "1", "2"],
+          "options": ["Please select an option", "Option 1", "Option 2"]
+        }
+      }
+    },
+    "inputs": {
+      "url": "https://the-internet.herokuapp.com/inputs",
+      "fields": {
+        "number": {
+          "type": "number",
+          "testValues": ["", "0", "1", "-1", "999999999", "3.14", "abc", "!@#", "1e10", "-0"]
+        }
+      }
+    },
+    "file_upload": {
+      "url": "https://the-internet.herokuapp.com/upload",
+      "fields": {
+        "file-upload": {
+          "id": "file-upload",
+          "name": "file",
+          "type": "file",
+          "testValues": ["", "test.txt", "image.jpg", "document.pdf", "script.exe", "largefile.zip", "file with spaces.txt", "file@special#chars.doc"]
+        }
+      }
+    },
+    "dynamic_controls": {
+      "url": "https://the-internet.herokuapp.com/dynamic_controls",
+      "fields": {
+        "checkbox": {
+          "type": "checkbox",
+          "testValues": [true, false]
+        },
+        "input": {
+          "type": "text",
+          "testValues": ["", "test input", "!@#$%^", "12345", " spaces "]
+        }
+      }
+    },
+    "key_presses": {
+      "url": "https://the-internet.herokuapp.com/key_presses",
+      "fields": {
+        "target": {
+          "id": "target",
+          "type": "text",
+          "testValues": ["a", "A", "1", "Enter", "Tab", "Escape", "Space", "Shift", "Ctrl", "Alt"]
+        }
+      }
+    },
+    "horizontal_slider": {
+      "url": "https://the-internet.herokuapp.com/horizontal_slider",
+      "fields": {
+        "slider": {
+          "type": "range",
+          "testValues": ["0", "0.5", "1", "2", "3", "4", "5"]
+        }
+      }
+    }
+  }
+}

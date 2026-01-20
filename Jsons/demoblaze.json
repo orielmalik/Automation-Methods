@@ -1,0 +1,211 @@
+{
+    "website": "https://www.demoblaze.com",
+    "pages": {
+        "signup": {
+            "url": "https://www.demoblaze.com",
+            "modal": "signInModal",
+            "fields": {
+                "username": {
+                    "id": "sign-username",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "newuser123",
+                        "user@example",
+                        "a",
+                        "verylongusernamethatmightexceedthelimit",
+                        "user name",
+                        "user_name",
+                        "user-name",
+                        "!@#$%",
+                        "admin",
+                        "SELECT * FROM users",
+                        "עברית",
+                        "中文"
+                    ]
+                },
+                "password": {
+                    "id": "sign-password",
+                    "type": "password",
+                    "testValues": [
+                        "",
+                        "Password123",
+                        "pass",
+                        "12345678",
+                        "!@#$%^&*()",
+                        "verylongpasswordthatmightexceedlimits",
+                        " ",
+                        "password with spaces",
+                        "UPPERCASE",
+                        "lowercase"
+                    ]
+                }
+            }
+        },
+        "login": {
+            "url": "https://www.demoblaze.com",
+            "modal": "logInModal",
+            "fields": {
+                "username": {
+                    "id": "loginusername",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "existinguser",
+                        "nonexistentuser",
+                        "admin",
+                        "test@#$%",
+                        " ",
+                        "USER",
+                        "user123"
+                    ]
+                },
+                "password": {
+                    "id": "loginpassword",
+                    "type": "password",
+                    "testValues": [
+                        "",
+                        "correctpassword",
+                        "wrongpassword",
+                        "123456",
+                        "!@#$%^",
+                        " "
+                    ]
+                }
+            }
+        },
+        "contact": {
+            "url": "https://www.demoblaze.com",
+            "modal": "exampleModal",
+            "fields": {
+                "email": {
+                    "id": "recipient-email",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "test@example.com",
+                        "invalid-email",
+                        "@gmail.com",
+                        "test@",
+                        "test.email+tag@domain.com",
+                        "a@b.c"
+                    ]
+                },
+                "name": {
+                    "id": "recipient-name",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "John Doe",
+                        "J",
+                        "John123",
+                        "John O'Brien",
+                        "!@#$%",
+                        "   John   ",
+                        "ישראל",
+                        "中文名"
+                    ]
+                },
+                "message": {
+                    "id": "message-text",
+                    "type": "textarea",
+                    "testValues": [
+                        "",
+                        "This is a test message",
+                        "A",
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "!@#$%^&*()",
+                        "Line 1\nLine 2\nLine 3",
+                        "<script>alert('xss')</script>"
+                    ]
+                }
+            }
+        },
+        "placeOrder": {
+            "url": "https://www.demoblaze.com/cart.html",
+            "modal": "orderModal",
+            "fields": {
+                "name": {
+                    "id": "name",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "John Doe",
+                        "J",
+                        "John O'Brien",
+                        "!@#$%"
+                    ]
+                },
+                "country": {
+                    "id": "country",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "USA",
+                        "United States of America",
+                        "UK",
+                        "123",
+                        "!@#"
+                    ]
+                },
+                "city": {
+                    "id": "city",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "New York",
+                        "NYC",
+                        "N",
+                        "City123",
+                        "!@#"
+                    ]
+                },
+                "creditCard": {
+                    "id": "card",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "4111111111111111",
+                        "1234567890123456",
+                        "1234",
+                        "abcd",
+                        "4111-1111-1111-1111",
+                        "!@#$"
+                    ]
+                },
+                "month": {
+                    "id": "month",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "01",
+                        "12",
+                        "1",
+                        "13",
+                        "00",
+                        "AB",
+                        "January"
+                    ]
+                },
+                "year": {
+                    "id": "year",
+                    "type": "text",
+                    "testValues": [
+                        "",
+                        "2025",
+                        "25",
+                        "2020",
+                        "9999",
+                        "ABCD",
+                        "!@#"
+                    ]
+                }
+            }
+        }
+    },
+    "categories": [
+        "Phones",
+        "Laptops",
+        "Monitors"
+    ]
+}
