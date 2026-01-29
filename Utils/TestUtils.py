@@ -7,14 +7,26 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 JSON_DIR = PROJECT_ROOT / "Jsons"
 
 
-def get_data_from_json(filename, generate_all_mixes):
+def get_data_from_json(filename, generate_all_mixes, default_index=0):
     file_path = JSON_DIR / filename
     with open(file_path, 'r', encoding='utf-8') as file:
         data = json.load(file)
 
-    if generate_all_mixes:
-        keys = data.keys()
-        values = data.values()
-        return [dict(zip(keys, combination)) for combination in itertools.product(*values)]
+    normalized_data = {
+        key: value if isinstance(value, list) else [value]
+        for key, value in data.items()
+    }
 
-    return [{key: value[1] for key, value in data.items()}]
+    if generate_all_mixes:
+        keys = list(normalized_data.keys())
+        values = list(normalized_data.values())
+        return [
+            dict(zip(keys, combination))
+            for combination in itertools.product(*values)
+        ]
+
+    return [{
+        key: values[default_index] if len(values) > default_index else values[0]
+        for key, values in normalized_data.items()
+    }]
+
