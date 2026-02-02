@@ -7,7 +7,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 JSON_DIR = PROJECT_ROOT / "Jsons"
 
 
-def get_data_from_json(filename, generate_all_mixes, default_index=0):
+def get_data_from_json(filename, generate_all_mixes, default_index=1):
     file_path = JSON_DIR / filename
     with open(file_path, 'r', encoding='utf-8') as file:
         data = json.load(file)

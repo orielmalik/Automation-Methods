@@ -1,8 +1,8 @@
 {
   "website": "https://testsite.getjones.com/ExampleForm/",
-  "Name": ["","name","name family","name_family","name%$"],
-  "Email":["","afekalearn@gmail.com","kgmail.com","$"] ,
-  "Phone":["","05","+54 9 11 0000-0000","050000000"] ,
-  "Company":["","BBC","^&"],
-  "Number of Employees": ["1-10","11-50","51-500","500+"]
+  "name": ["","name","name family","name_family","name%$"],
+  "email":["","afekalearn@gmail.com","kgmail.com","$"] ,
+  "phone":["","05","+54 9 11 0000-0000","050000000"] ,
+  "company":["","BBC","^&"],
+  "employees": ["1-10","11-50","51-500","500+"]
 }
