@@ -1,6 +1,7 @@
 import pytest
 
-from TestImpl.SelenimMock import ArgentinaTest
+from TestImpl.PlaywrightImpl import PArgentinaTest
+from TestImpl.SelenimMock import MArgentinaTest
 
 
 def test_argentina_form_data(
@@ -10,8 +11,5 @@ def test_argentina_form_data(
     generate_all_mixes
 ):
     data = get_data("ArgentinaForm.json")
-    ArgentinaTest(selenium_driver, data)
-
-
-    # --- PLAYWRIGHT ---
-    # playwright_run_tests(playwright_page, data, generate_all_mixes)
+    MArgentinaTest(selenium_driver, data)
+    PArgentinaTest(playwright_page, data,generate_all_mixes)

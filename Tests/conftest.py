@@ -27,7 +27,7 @@ def generate_all_mixes(request):
 
 @pytest.fixture(scope="session")
 def selenium_driver():
-    adapter = SeleniumAdapter(headless=False)
+    adapter = SeleniumAdapter(headless=True)
     driver = adapter.start()
     yield driver
     adapter.stop()
