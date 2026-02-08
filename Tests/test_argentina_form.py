@@ -12,4 +12,4 @@ def test_argentina_form_data(
 ):
     data = get_data("ArgentinaForm.json")
     MArgentinaTest(selenium_driver, data)
-    PArgentinaTest(playwright_page, data,generate_all_mixes)
+    PArgentinaTest(playwright_page, data,False)

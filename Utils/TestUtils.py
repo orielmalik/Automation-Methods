@@ -2,6 +2,11 @@ import json
 import itertools
 import itertools
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+import os
+max_workers = min(32, (os.cpu_count() or 1) + 4)
+
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 JSON_DIR = PROJECT_ROOT / "Jsons"
@@ -29,4 +34,6 @@ def get_data_from_json(filename, generate_all_mixes, default_index=1):
         key: values[default_index] if len(values) > default_index else values[0]
         for key, values in normalized_data.items()
     }]
+
+
 
