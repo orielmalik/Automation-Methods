@@ -2,7 +2,7 @@ import logging
 import os
 from datetime import datetime
 
-
+#Logger: doesn't print the error to parents log file.
 class LoggerSingleton:
     _instance = None
 
@@ -24,8 +24,8 @@ class LoggerSingleton:
             file_handler = logging.FileHandler(file_path, mode="w", encoding="utf-8")
             file_handler.setLevel(logging.DEBUG)
 
-            console_handler = logging.StreamHandler()
-            console_handler.setLevel(logging.INFO)
+            console_handler = logging.StreamHandler() #StreamHandler ,FileHandler,RotatingFileHandler,HTTPHandler,SocketHandler
+            console_handler.setLevel(logging.ERROR)
 
             formatter = logging.Formatter(
                 "%(asctime)s | %(levelname)s | %(name)s | %(message)s",
@@ -47,17 +47,17 @@ class LoggerSingleton:
 logger_instance = LoggerSingleton().get_logger()
 
 
-def printer(type, value):
+def printer(type, value, **kwargs):
     type = type.lower()
     if type == "debug":
-        logger_instance.debug(value)
+        logger_instance.debug(value, **kwargs)
     elif type == "info":
-        logger_instance.info(value)
+        logger_instance.info(value, **kwargs)
     elif type == "warning":
-        logger_instance.warning(value)
+        logger_instance.warning(value, **kwargs)
     elif type == "error":
-        logger_instance.error(value)
+        logger_instance.error(value, **kwargs)
     elif type == "critical":
-        logger_instance.critical(value)
+        logger_instance.critical(value, **kwargs)
     else:
-        logger_instance.info(f"UNSPECIFIED TYPE: {value}")
+        logger_instance.info(f"UNSPECIFIED TYPE: {value}", **kwargs)

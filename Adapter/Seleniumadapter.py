@@ -7,7 +7,7 @@ from Adapter.Base import BrowserAdapter
 
 class SeleniumAdapter(BrowserAdapter):
 
-    def __init__(self, headless: bool = True):
+    def __init__(self, headless: bool = False):
         self.headless = headless
         self._driver: WebDriver | None = None
 

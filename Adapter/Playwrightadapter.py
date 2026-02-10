@@ -5,7 +5,7 @@ from Adapter.Base import BrowserAdapter
 
 class PlaywrightAdapter(BrowserAdapter):
 
-    def __init__(self, headless: bool = True, slow_mo: float = 0):
+    def __init__(self, headless: bool = False, slow_mo: float = 0):
         self.headless = headless
         self.slow_mo = slow_mo
 

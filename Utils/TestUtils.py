@@ -5,8 +5,10 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import os
-max_workers = min(32, (os.cpu_count() or 1) + 4)
 
+from Utils import LoggerSingelton
+
+max_workers = min(32, (os.cpu_count() or 1) + 4)
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 JSON_DIR = PROJECT_ROOT / "Jsons"
@@ -35,5 +37,15 @@ def get_data_from_json(filename, generate_all_mixes, default_index=1):
         for key, values in normalized_data.items()
     }]
 
+
+def auto_error_logger(func):
+    def wrapper(type, value, *args, **kwargs):
+        try:
+            return func(type, value, *args, **kwargs)
+        except Exception as e:
+            LoggerSingelton.printer("error", f"Automatic log of exception: {e}", exc_info=True)
+            raise
+
+    return wrapper
 
 
