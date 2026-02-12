@@ -25,7 +25,7 @@ def PArgentinaTest(playwright_page: Page, data, generate_all_mixes):
     LoggerSingelton.printer("debug", playwright_page.title())
     if not generate_all_mixes:
         taskNot(playwright_page, data)
-        playwright_page.locator("primary button").click()
+        playwright_page.locator(byPlaywright["XPATH"](data[0]["primary button"])).click()
         assert str(playwright_page.url()) != str(data[0]["website"])
         LoggerSingelton.printer("debug", "V click by locatorCLASS_NAME")
         playwright_page.go_back(wait_until="networkidle")
