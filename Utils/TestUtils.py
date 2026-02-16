@@ -38,14 +38,27 @@ def get_data_from_json(filename, generate_all_mixes, default_index=1):
     }]
 
 
+from functools import wraps
+
 def auto_error_logger(func):
-    def wrapper(type, value, *args, **kwargs):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
         try:
-            return func(type, value, *args, **kwargs)
+            return func(*args, **kwargs)
+        except AssertionError as ae:
+            LoggerSingelton.printer(
+                "error",
+                f"Assertion failed: {ae}",
+                exc_info=True
+            )
+            raise
         except Exception as e:
-            LoggerSingelton.printer("error", f"Automatic log of exception: {e}", exc_info=True)
+            LoggerSingelton.printer(
+                "error",
+                f"Unhandled exception: {e}",
+                exc_info=True
+            )
             raise
 
     return wrapper
-
 

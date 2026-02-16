@@ -16,14 +16,24 @@ class PlaywrightAdapter(BrowserAdapter):
 
     def start(self) -> Page:
         self._playwright = sync_playwright().start()
+
         self._browser = self._playwright.chromium.launch(
             headless=self.headless,
-            slow_mo=self.slow_mo
+            slow_mo=self.slow_mo,
+            args=[
+                "--disable-gpu",
+                "--disable-software-rasterizer",
+                "--disable-dev-shm-usage",
+                "--no-sandbox",
+                "--disable-extensions",
+            ],
         )
+
         self._context = self._browser.new_context(
             viewport={"width": 1280, "height": 800},
             user_agent="Mozilla/5.0 Automation"
         )
+
         self._page = self._context.new_page()
         return self._page
 
