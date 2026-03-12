@@ -35,7 +35,7 @@ def selenium_driver():
 
 @pytest.fixture(scope="session")
 def playwright_page():
-    adapter = PlaywrightAdapter(headless=True, slow_mo=50)
+    adapter = PlaywrightAdapter(headless=False, slow_mo=500)
     page = adapter.start()
     yield page
     adapter.stop()
