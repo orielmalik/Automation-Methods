@@ -9,21 +9,33 @@ def goto(playwright_page, website):
     playwright_page.goto(website)
 
 
+def fill_field(playwright_page: Page, key: str, value):
+    if key == "employees":
+        playwright_page.select_option(byPlaywright["ID"](key), str(value))
+    else:
+        playwright_page.locator(byPlaywright["ID"](key)).fill(str(value))
+
+
+def click(playwright_page: Page, selector):
+    if isinstance(selector, dict):
+        role = selector.get("role", "button")
+        options = {k: v for k, v in selector.items() if k != "role"}
+        playwright_page.get_by_role(role, **options).click()
+    else:
+        playwright_page.locator(selector).click()
+
+
 @auto_error_logger
 def task(playwright_page: Page, data):
     for key, value in ((k, v) for k, v in data[0].items() if k not in ["website", "primary button"]):
         LoggerSingelton.printer("INFO", f"Task {key}: {value}")
-        if key == "employees":
-            playwright_page.select_option(byPlaywright["ID"](key), str(value))
-        else:
-            playwright_page.locator(byPlaywright["ID"](key)).fill(str(value))
+        fill_field(playwright_page, key, value)
 
     assert playwright_page.title() == "Example Form"
 
 
 @auto_error_logger
 def PArgentinaTest(playwright_page: Page, data, generate_all_mixes):
-
     LoggerSingelton.printer("INFO", "Starting PArgentinaTest")
 
     iterations = data if generate_all_mixes else [data[0]]
@@ -39,7 +51,6 @@ def PArgentinaTest(playwright_page: Page, data, generate_all_mixes):
             f"Running iteration #{index}"
         )
 
-        # ---- Navigation ----
         LoggerSingelton.printer(
             "DEBUG",
             f"Navigating to {current_data['website']}"
@@ -50,31 +61,19 @@ def PArgentinaTest(playwright_page: Page, data, generate_all_mixes):
         title = playwright_page.title()
         LoggerSingelton.printer("DEBUG", f"Page title: {title}")
 
-        assert title == "Example Form", \
-            f"Unexpected title: {title}"
+        assert title == "Example Form", f"Unexpected title: {title}"
 
-        # ---- Fill Form ----
         for key, value in (
                 (k, v) for k, v in current_data.items()
                 if k not in ["website", "primary button"]
         ):
-
             LoggerSingelton.printer(
                 "INFO",
                 f"Filling field '{key}' with value '{value}'"
             )
 
-            if key == "employees":
-                playwright_page.select_option(
-                    byPlaywright["ID"](key),
-                    str(value)
-                )
-            else:
-                playwright_page.locator(
-                    byPlaywright["ID"](key)
-                ).fill(str(value))
+            fill_field(playwright_page, key, value)
 
-        # ---- Click ----
         primary = current_data["primary button"]
 
         LoggerSingelton.printer(
@@ -82,14 +81,11 @@ def PArgentinaTest(playwright_page: Page, data, generate_all_mixes):
             f"Primary button selector: {primary}"
         )
 
-
         LoggerSingelton.printer("INFO", "Clicking button via role selector")
-        playwright_page.get_by_role(
-                "button",
-                name=primary
-            ).click()
 
-        new_url = playwright_page.url()
+        click(playwright_page, byPlaywright["XPATH"](primary))
+
+        new_url = playwright_page.url
         LoggerSingelton.printer(
             "DEBUG",
             f"URL after click: {new_url}"

@@ -1,7 +1,5 @@
-import pytest
-
-from TestImpl.PlaywrightImpl import PArgentinaTest
-from TestImpl.SelenimMock import MArgentinaTest
+from Tests.ArgentinaForm.PlaywrightImpl import PArgentinaTest
+from Tests.ArgentinaForm.SelenimMock import MArgentinaTest
 
 
 def test_argentina_form_data(
