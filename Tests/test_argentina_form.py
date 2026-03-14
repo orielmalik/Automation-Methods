@@ -1,17 +1,15 @@
 from Tests.ArgentinaForm.PlaywrightImpl import PArgentinaTest
-from Tests.ArgentinaForm.SelenimMock import MArgentinaTest
-
+from Tests.ArgentinaForm.SelenumMock import MArgentinaTest
 
 import pytest
 from Utils import LoggerSingelton
 
+
 def test_argentina_form_data(get_data, selenium_driver, playwright_page, generate_all_mixes):
     data_list = get_data("ArgentinaForm.json")
     errors = []
-
     for entry in data_list:
         try:
-
             MArgentinaTest(selenium_driver, [entry])
         except Exception as e:
             error_msg = f"Selenium failed for entry {entry}: {e}"
