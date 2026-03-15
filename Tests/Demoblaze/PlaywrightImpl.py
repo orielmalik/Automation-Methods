@@ -9,12 +9,6 @@ def goto(playwright_page, website):
     playwright_page.goto(website)
 
 
-def fill_field(playwright_page: Page, key: str, value):
-    if key == "employees":
-        playwright_page.select_option(byPlaywright["ID"](key), str(value))
-    else:
-        playwright_page.locator(byPlaywright["ID"](key)).fill(str(value))
-
 
 def click(playwright_page: Page, selector):
     if isinstance(selector, dict):
@@ -29,7 +23,6 @@ def click(playwright_page: Page, selector):
 def task(playwright_page: Page, data):
     for key, value in ((k, v) for k, v in data[0].items() if k not in ["website", "primary button"]):
         LoggerSingelton.printer("INFO", f"Task {key}: {value}")
-        fill_field(playwright_page, key, value)
 
     assert playwright_page.title() == "Example Form"
 

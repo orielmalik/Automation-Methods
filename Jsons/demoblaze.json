@@ -1,211 +1,220 @@
 {
-    "website": "https://www.demoblaze.com",
-    "pages": {
-        "signup": {
-            "url": "https://www.demoblaze.com",
-            "modal": "signInModal",
-            "fields": {
-                "username": {
-                    "id": "sign-username",
-                    "type": "text",
-                    "testValues": [
-                        "",
-                        "newuser123",
-                        "user@example",
-                        "a",
-                        "verylongusernamethatmightexceedthelimit",
-                        "user name",
-                        "user_name",
-                        "user-name",
-                        "!@#$%",
-                        "admin",
-                        "SELECT * FROM users",
-                        "עברית",
-                        "中文"
-                    ]
-                },
-                "password": {
-                    "id": "sign-password",
-                    "type": "password",
-                    "testValues": [
-                        "",
-                        "Password123",
-                        "pass",
-                        "12345678",
-                        "!@#$%^&*()",
-                        "verylongpasswordthatmightexceedlimits",
-                        " ",
-                        "password with spaces",
-                        "UPPERCASE",
-                        "lowercase"
-                    ]
-                }
-            }
-        },
-        "login": {
-            "url": "https://www.demoblaze.com",
-            "modal": "logInModal",
-            "fields": {
-                "username": {
-                    "id": "loginusername",
-                    "type": "text",
-                    "testValues": [
-                        "",
-                        "existinguser",
-                        "nonexistentuser",
-                        "admin",
-                        "test@#$%",
-                        " ",
-                        "USER",
-                        "user123"
-                    ]
-                },
-                "password": {
-                    "id": "loginpassword",
-                    "type": "password",
-                    "testValues": [
-                        "",
-                        "correctpassword",
-                        "wrongpassword",
-                        "123456",
-                        "!@#$%^",
-                        " "
-                    ]
-                }
-            }
-        },
-        "contact": {
-            "url": "https://www.demoblaze.com",
-            "modal": "exampleModal",
-            "fields": {
-                "email": {
-                    "id": "recipient-email",
-                    "type": "text",
-                    "testValues": [
-                        "",
-                        "test@example.com",
-                        "invalid-email",
-                        "@gmail.com",
-                        "test@",
-                        "test.email+tag@domain.com",
-                        "a@b.c"
-                    ]
-                },
-                "name": {
-                    "id": "recipient-name",
-                    "type": "text",
-                    "testValues": [
-                        "",
-                        "John Doe",
-                        "J",
-                        "John123",
-                        "John O'Brien",
-                        "!@#$%",
-                        "   John   ",
-                        "ישראל",
-                        "中文名"
-                    ]
-                },
-                "message": {
-                    "id": "message-text",
-                    "type": "textarea",
-                    "testValues": [
-                        "",
-                        "This is a test message",
-                        "A",
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                        "!@#$%^&*()",
-                        "Line 1\nLine 2\nLine 3",
-                        "<script>alert('xss')</script>"
-                    ]
-                }
-            }
-        },
-        "placeOrder": {
-            "url": "https://www.demoblaze.com/cart.html",
-            "modal": "orderModal",
-            "fields": {
-                "name": {
-                    "id": "name",
-                    "type": "text",
-                    "testValues": [
-                        "",
-                        "John Doe",
-                        "J",
-                        "John O'Brien",
-                        "!@#$%"
-                    ]
-                },
-                "country": {
-                    "id": "country",
-                    "type": "text",
-                    "testValues": [
-                        "",
-                        "USA",
-                        "United States of America",
-                        "UK",
-                        "123",
-                        "!@#"
-                    ]
-                },
-                "city": {
-                    "id": "city",
-                    "type": "text",
-                    "testValues": [
-                        "",
-                        "New York",
-                        "NYC",
-                        "N",
-                        "City123",
-                        "!@#"
-                    ]
-                },
-                "creditCard": {
-                    "id": "card",
-                    "type": "text",
-                    "testValues": [
-                        "",
-                        "4111111111111111",
-                        "1234567890123456",
-                        "1234",
-                        "abcd",
-                        "4111-1111-1111-1111",
-                        "!@#$"
-                    ]
-                },
-                "month": {
-                    "id": "month",
-                    "type": "text",
-                    "testValues": [
-                        "",
-                        "01",
-                        "12",
-                        "1",
-                        "13",
-                        "00",
-                        "AB",
-                        "January"
-                    ]
-                },
-                "year": {
-                    "id": "year",
-                    "type": "text",
-                    "testValues": [
-                        "",
-                        "2025",
-                        "25",
-                        "2020",
-                        "9999",
-                        "ABCD",
-                        "!@#"
-                    ]
-                }
-            }
-        }
+  "website": "https://www.demoblaze.com",
+  "upperToolbar": {
+    "container": {
+      "id": "navbarExample",
+      "class": "navbar navbar-expand-lg navbar-light bg-light"
     },
-    "categories": [
-        "Phones",
-        "Laptops",
-        "Monitors"
+    "items": [
+      {
+        "text": "STORE",
+        "type": "brand",
+        "selector": "#navbarExample a.navbar-brand",
+        "xpath": "//a[@class='navbar-brand' and contains(text(),'STORE')]",
+        "href": "index.html",
+        "notes": "Home / logo link"
+      },
+      {
+        "text": "Home",
+        "type": "link",
+        "selector": "a.nav-link[href='index.html']",
+        "xpath": "//a[contains(@class,'nav-link') and text()='Home']",
+        "href": "index.html"
+      },
+      {
+        "text": "Contact",
+        "type": "modal_trigger",
+        "selector": "#navbarExample a[data-toggle='modal'][data-target='#exampleModal']",
+        "xpath": "//a[contains(text(),'Contact') and @data-target='#exampleModal']",
+        "modal": "exampleModal"
+      },
+      {
+        "text": "About us",
+        "type": "modal_trigger",
+        "selector": "#navbarExample a[data-toggle='modal'][data-target='#videoModal']",
+        "xpath": "//a[contains(text(),'About us') and @data-target='#videoModal']",
+        "modal": "videoModal",
+        "notes": "Opens video modal (about video)"
+      },
+      {
+        "text": "Cart",
+        "type": "link_with_badge",
+        "selector": "#cartur",
+        "xpath": "//a[@id='cartur']",
+        "href": "cart.html",
+        "badge": {
+          "selector": "#cartur span.badge",
+          "notes": "Item count appears here when cart has products"
+        }
+      },
+      {
+        "text": "Log in",
+        "type": "modal_trigger",
+        "selector": "#login2",
+        "xpath": "//a[@id='login2']",
+        "modal": "logInModal",
+        "notes": "Hidden after login"
+      },
+      {
+        "text": "Sign up",
+        "type": "modal_trigger",
+        "selector": "#signin2",
+        "xpath": "//a[@id='signin2']",
+        "modal": "signInModal",
+        "notes": "Hidden after login"
+      }
+    ],
+    "behavior": {
+      "logged_in": "Replaces Log in/Sign up with 'Welcome [username]' span",
+      "welcome_selector": "xpath://span[contains(@class,'navbar-text') and contains(text(),'Welcome')]"
+    }
+  },
+  "pages": {
+    "signup": {
+      "url": "https://www.demoblaze.com/index.html",
+      "modal": "signInModal",
+      "fields": {
+        "username": {
+          "id": "sign-username",
+          "selector": "#sign-username",
+          "xpath": "//input[@id='sign-username']",
+          "type": "text"
+        },
+        "password": {
+          "id": "sign-password",
+          "selector": "#sign-password",
+          "xpath": "//input[@id='sign-password']",
+          "type": "password"
+        },
+        "signup_button": {
+          "selector": "#signInModal button:has-text('Sign up')",
+          "xpath": "//button[contains(text(),'Sign up') and @onclick='register()']"
+        }
+      }
+    },
+    "login": {
+      "url": "https://www.demoblaze.com/index.html",
+      "modal": "logInModal",
+      "fields": {
+        "username": {
+          "id": "loginusername",
+          "selector": "#loginusername",
+          "xpath": "//input[@id='loginusername']",
+          "type": "text"
+        },
+        "password": {
+          "id": "loginpassword",
+          "selector": "#loginpassword",
+          "xpath": "//input[@id='loginpassword']",
+          "type": "password"
+        },
+        "login_button": {
+          "selector": "#logInModal button:has-text('Log in')",
+          "xpath": "//button[contains(text(),'Log in') and @onclick='logIn()']"
+        }
+      }
+    },
+    "contact": {
+      "url": "https://www.demoblaze.com/index.html",
+      "modal": "exampleModal",
+      "fields": {
+        "email": {
+          "id": "recipient-email",
+          "selector": "#recipient-email",
+          "xpath": "//input[@id='recipient-email']",
+          "type": "text"
+        },
+        "name": {
+          "id": "recipient-name",
+          "selector": "#recipient-name",
+          "xpath": "//input[@id='recipient-name']",
+          "type": "text"
+        },
+        "message": {
+          "id": "message-text",
+          "selector": "#message-text",
+          "xpath": "//textarea[@id='message-text']",
+          "type": "textarea"
+        },
+        "send_button": {
+          "selector": "#exampleModal button:has-text('Send message')",
+          "xpath": "//button[contains(text(),'Send message')]"
+        }
+      }
+    },
+    "placeOrder": {
+      "url": "https://www.demoblaze.com/cart.html",
+      "modal_trigger": {
+        "selector": "#orderModal button:has-text('Place Order')",
+        "xpath": "//button[contains(text(),'Place Order')]"
+      },
+      "modal": "orderModal",
+      "fields": {
+        "name": {
+          "id": "name",
+          "selector": "#name",
+          "xpath": "//input[@id='name']",
+          "type": "text"
+        },
+        "country": {
+          "id": "country",
+          "selector": "#country",
+          "xpath": "//input[@id='country']",
+          "type": "text"
+        },
+        "city": {
+          "id": "city",
+          "selector": "#city",
+          "xpath": "//input[@id='city']",
+          "type": "text"
+        },
+        "creditCard": {
+          "id": "card",
+          "selector": "#card",
+          "xpath": "//input[@id='card']",
+          "type": "text"
+        },
+        "month": {
+          "id": "month",
+          "selector": "#month",
+          "xpath": "//input[@id='month']",
+          "type": "text"
+        },
+        "year": {
+          "id": "year",
+          "selector": "#year",
+          "xpath": "//input[@id='year']",
+          "type": "text"
+        },
+        "purchase_button": {
+          "selector": "#orderModal button:has-text('Purchase')",
+          "xpath": "//button[contains(text(),'Purchase')]"
+        }
+      }
+    }
+  },
+  "categories": {
+    "sidebar_container": {
+      "selector": "#contcat",
+      "notes": "Left category list",
+      "item_block":"card-img-top img-fluid"
+    },
+    "items": [
+      {
+        "name": "Phones",
+        "selector": "a.list-group-item.list-group-item-action[href='#'][onclick=\"byCat('phone')\"]",
+        "xpath": "//a[contains(text(),'Phones') and @onclick=\"byCat('phone')\"]"
+      },
+      {
+        "name": "Laptops",
+        "selector": "a.list-group-item.list-group-item-action[href='#'][onclick=\"byCat('notebook')\"]",
+        "xpath": "//a[contains(text(),'Laptops') and @onclick=\"byCat('notebook')\"]"
+      },
+      {
+        "name": "Monitors",
+        "selector": "a.list-group-item.list-group-item-action[href='#'][onclick=\"byCat('monitor')\"]",
+        "xpath": "//a[contains(text(),'Monitors') and @onclick=\"byCat('monitor')\"]"
+      }
     ]
+  }
 }
