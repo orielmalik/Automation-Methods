@@ -13,23 +13,25 @@ def get(selenium_driver, website):
 
 @auto_error_logger
 def clickableUpperNavigator(selenium_driver: WebDriver, data):
-    get(data[0]["website"])
+    get(data[0].get("website"))
     for item in data:
-        if item not in ["STORE"]:
+        if item != "STORE":
             WaitFacade(selenium_driver).clickable(By.XPATH, item.get("xpath")).click()
-            get(data[0]["website"])
-            WaitFacade(selenium_driver).text((By.XPATH, item.get("xpath")),item.get("text"))
-
-
-
-    selenium_driver.close()
+            get(data[0].get("website"))
+            WaitFacade(selenium_driver).text((By.XPATH, item.get("xpath")), item.get("text")).click()
+            get(data[0].get("website"))
 
 
 @auto_error_logger
 def clickableProducts(selenium_driver: WebDriver, data):
-
+    inner = data[0].get("categories")
+    a = 3 <= len(selenium_driver.find_elements(By.CLASS_NAME, data.get("sidebar_container").get("item_blockhome")))
+    if not a:
+        raise ValueError("No products")
 
 @auto_error_logger
 def MDemoblazeTest(selenium_driver: WebDriver, data):
-    clickableUpperNavigator(selenium_driver, data["items"])
+    clickableUpperNavigator(selenium_driver, data[0].get("items"))
+    clickableProducts(selenium_driver, data[0].get("items"))
 
+    selenium_driver.close()

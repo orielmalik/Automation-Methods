@@ -197,7 +197,8 @@
     "sidebar_container": {
       "selector": "#contcat",
       "notes": "Left category list",
-      "item_block":"card-img-top img-fluid"
+      "item_block":"card-img-top img-fluid",
+      "item_blockhome": "col-lg-4 col-md-6 mb-4"
     },
     "items": [
       {
