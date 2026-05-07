@@ -1,3 +1,4 @@
+#Not clickable
 Feature: Fill Fields
 
   Scenario: Fill fields with valid input
