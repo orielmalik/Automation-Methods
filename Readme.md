@@ -1,63 +1,78 @@
 # Automation Framework – Selenium & Playwright Pipeline
 
 ## 📌 Overview
-This project provides a **custom automation infrastructure** built on top of **Selenium** and **Playwright**, designed for **control, scalability, and clarity**.
+
+This project provides a custom automation infrastructure built on top of Selenium and Playwright, designed for control, scalability, deterministic execution, and transparent test orchestration.
 
 The framework introduces:
-- A **custom Adapter layer** over Selenium & Playwright  
-- A **Pipeline execution model** (Selenium → Playwright)  
-- **Data-driven testing** based on structured JSON files  
-- **Gherkin-style tests** for readability and BDD alignment  
 
-Unlike plugin-based approaches, this framework avoids hidden behavior and gives full ownership over browser lifecycle, execution order, and test logic.
+- Custom Adapter layer over Selenium & Playwright
+- Sequential Pipeline execution model (Selenium → Playwright)
+- Structured JSON-driven test generation
+- Gherkin-style scenario execution
+- Feature-based execution flow
+- Optional LLM integration for dynamic data generation
 
----
+Unlike plugin-heavy automation frameworks, this system avoids hidden abstractions and keeps full ownership of:
 
-## 🧠 Core Concept – Pipeline Architecture
-
-1. **Selenium (Gatekeeper)**
-   - Validates page structure
-   - Ensures all fields from JSON exist in the DOM
-   - Detects missing / renamed / broken locators
-   - Stops the pipeline early if the page is invalid
-
-2. **Playwright (Runner)**
-   - Executes real UI interactions
-   - Runs positive, negative, boundary, and security tests
-   - Supports combinatorial testing via CLI flags
-
-This guarantees:
-- No wasted Playwright runs on broken pages
-- Faster feedback
-- Clear separation of responsibilities
+- Browser lifecycle
+- Selector validation
+- Scenario orchestration
+- Data classification
+- Execution strategies
+- Test generation logic
 
 ---
 
-## ✨ Features
+# 🧠 Core Architecture
 
-- **Custom Browser Adapters**
-  - `SeleniumAdapter`
-  - `PlaywrightAdapter`
-- **No pytest-playwright dependency**
-- **Single-run pipeline (no duplicated tests)**
-- **CLI-controlled data expansion**
-- **JSON-driven automation**
-- **Gherkin-ready test structure**
-- **Deterministic browser lifecycle**
+## Selenium → Playwright Pipeline
+
+The framework is intentionally split into two independent stages.
 
 ---
 
-## 🛠 Technologies Used
+## 1️⃣ Selenium Layer – Structural Validation
 
-- **Selenium 🚀** – DOM validation, structure verification  
-- **Playwright 🎭** – Fast and reliable UI execution  
-- **Pytest 🧪** – Test orchestration  
-- **Gherkin 📜** – Behavior-driven test definitions  
-- **JSON 📂** – Test data & field definitions  
+Selenium acts as a lightweight validation and verification layer before actual execution begins.
+
+### Responsibilities
+
+- Validate DOM availability
+- Ensure required fields exist
+- Detect broken selectors early
+- Prevent invalid pages from reaching execution stage
+- Catch synchronization issues before Playwright execution
+
+### Goal
+
+Fail fast before expensive execution starts.
 
 ---
 
-## 📁 QA Testing Websites – Test Data Collection
+## 2️⃣ Playwright Layer – Behavioral Execution
 
-A curated set of JSON files with real-world test data for popular QA practice websites.
+After Selenium validates the page structure, Playwright performs the actual user flow execution.
 
+### Responsibilities
+
+- Fill forms
+- Trigger actions
+- Navigate pages
+- Validate success/failure flows
+- Capture runtime behavior
+- Execute deterministic scenario pipelines
+
+---
+
+# 🧩 Gherkin Feature Execution
+
+The framework uses Gherkin-style FEATURES as the orchestration layer.
+
+Example:
+
+```gherkin
+Scenario: PASS cases
+  Given valid input data
+  When I submit the form
+  Then I should be redirected successfully

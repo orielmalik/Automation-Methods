@@ -7,7 +7,7 @@
         "name!", "@name", "name#", "name$", "name%", "name^", "name&"
     ],
     "email": [
-        "", "afekalearn@gmail.com", "kgmail.com", "$",
+        "", "afekalrn@gmail.com", "kgmail.com", "$",
         "user@", "@domain.com", "user@domain", "user@domain..com",
         "user.name+test@example.com", "user_name@example.co.uk",
         "user-name@sub.domain.com", "user@123.123.123.123",

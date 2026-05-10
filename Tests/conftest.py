@@ -1,28 +1,103 @@
-import pytest
 import sys
 import os
 
-sys.path.append(
-    os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+import pytest
+
+BASE_DIR = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..")
 )
 
+sys.path.insert(0, BASE_DIR)
+
+from Features.parser import parse_feature
 from Adapter.Playwrightadapter import PlaywrightAdapter
 from Adapter.Seleniumadapter import SeleniumAdapter
-from Utils.TestUtils import get_data_from_json
+from Utils import LoggerSingelton
 
 
 def pytest_addoption(parser):
     parser.addoption(
-        "--generate-all-mixes",
-        action="store_true",
-        default=False,
-        help="Generate all data combinations instead of minimal set"
+        "--feature",
+        action="store",
+        default="ArgentinaForm"
+    )
+
+    parser.addoption(
+        "--scenario",
+        action="store",
+        default=None
     )
 
 
+# ---------------------------------------------------
+# OPTIONAL GROQ FIXTURE
+# ---------------------------------------------------
+#
+# @pytest.fixture(scope="session")
+# def groq_service():
+#
+#     api_key = find_and_load_env(
+#         "GROQ_SECRET_KEY"
+#     )
+#
+#     LoggerSingelton.printer(
+#         "INFO",
+#         f"GROQ API LOADED -> {api_key[:15] if api_key else 'NOT FOUND'}"
+#     )
+#
+#     adapter = GroqService(api_key)
+#
+#     adapter.start()
+#
+#     yield adapter
+#
+#     try:
+#         adapter.stop()
+#
+#     except Exception as e:
+#         LoggerSingelton.printer(
+#             "ERROR",
+#             f"GROQ STOP FAILED -> {e}"
+#         )
+#
+# ---------------------------------------------------
+
+
 @pytest.fixture(scope="session")
-def generate_all_mixes(request):
-    return request.config.getoption("--generate-all-mixes")
+def feature_data(request):
+    feature_name = request.config.getoption(
+        "--feature"
+    )
+
+    scenario_filter = request.config.getoption(
+        "--scenario"
+    )
+
+    LoggerSingelton.printer(
+        "INFO",
+        f"FEATURE -> {feature_name}"
+    )
+
+    scenarios = parse_feature(feature_name)
+
+    if scenario_filter:
+        LoggerSingelton.printer(
+            "INFO",
+            f"SCENARIO FILTER -> {scenario_filter}"
+        )
+
+        scenarios = [
+            scenario
+            for scenario in scenarios
+            if scenario["name"] == scenario_filter
+        ]
+
+    LoggerSingelton.printer(
+        "INFO",
+        f"SCENARIOS LOADED -> {len(scenarios)}"
+    )
+
+    return scenarios
 
 
 @pytest.fixture(scope="session")
@@ -41,11 +116,15 @@ def playwright_page():
     adapter.stop()
 
 
-@pytest.fixture
-def get_data(generate_all_mixes):
-    def _get_data(filename):
-        return get_data_from_json(
-            filename=filename,
-            generate_all_mixes=generate_all_mixes
-        )
-    return _get_data
+@pytest.fixture(scope="session")
+def mode(request):
+    selected = request.config.getoption(
+        "--scenario"
+    ) or "full"
+
+    LoggerSingelton.printer(
+        "INFO",
+        f"MODE -> {selected}"
+    )
+
+    return selected
